@@ -19,20 +19,19 @@ st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 
-    /* HIDE STREAMLIT ELEMENTS - FULL SCREEN MODE */
+    /* HEADER ENABLED FOR SIDEBAR TOGGLE VISIBILITY */
     [data-testid="stHeader"] {
-        display: none !important;
+        background-color: rgba(0,0,0,0) !important;
     }
     
     .main .block-container {
-        padding-top: 0rem !important;
+        padding-top: 2rem !important;
         padding-bottom: 0rem !important;
         max-width: 100% !important;
     }
 
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    header {visibility: hidden;}
 
     /* Global Typography */
     html, body, [data-testid="stAppViewContainer"] {
@@ -112,28 +111,28 @@ st.markdown("""
     }
 
     /* EXCLUSIVE BUTTON STYLE REVISED - PREDIKSI */
-    .stButton>button {
-        width: 100%;
-        background: linear-gradient(135deg, #10b981 0%, #064e3b 50%, #059669 100%);
-        background-size: 200% auto;
+    div.stButton > button {
+        width: 100% !important;
+        background: linear-gradient(135deg, #10b981 0%, #064e3b 50%, #059669 100%) !important;
+        background-size: 200% auto !important;
         color: white !important;
-        border: 1px solid rgba(255,255,255,0.3);
+        border: 1px solid rgba(255,255,255,0.4) !important;
         padding: 25px !important;
-        border-radius: 20px;
-        font-weight: 900;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        box-shadow: 0 10px 40px rgba(16, 185, 129, 0.4);
-        transition: all 0.5s ease;
-        cursor: pointer;
+        border-radius: 20px !important;
+        font-weight: 900 !important;
+        font-size: 1.2rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 4px !important;
+        box-shadow: 0 10px 40px rgba(16, 185, 129, 0.4) !important;
+        transition: all 0.5s ease !important;
+        cursor: pointer !important;
     }
 
-    .stButton>button:hover {
-        background-position: right center;
-        transform: translateY(-5px);
-        box-shadow: 0 20px 60px rgba(16, 185, 129, 0.7);
-        border-color: #ffffff;
+    div.stButton > button:hover {
+        background-position: right center !important;
+        transform: translateY(-5px) !important;
+        box-shadow: 0 20px 60px rgba(16, 185, 129, 0.7) !important;
+        border-color: #ffffff !important;
     }
 
     /* Footer Branding */
@@ -199,7 +198,7 @@ def build_ai_model(data):
 df = get_processed_data()
 ai_engine, feature_names = build_ai_model(df)
 
-# --- NAVIGASI  ---
+# --- NAVIGASI ---
 with st.sidebar:
     st.markdown("<h1 style='text-align: center; font-size: 40px;'>EMERALD</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; font-style: italic; opacity: 0.7;'>Bike Sharing Platform</p>", unsafe_allow_html=True)
